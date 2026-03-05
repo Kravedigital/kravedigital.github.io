@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Krave Digital</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.about-story { background:var(--black); }
+.story-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:100px; align-items:center; margin-top:70px; }
+.story-visual { position:relative; }
+.story-box { background:var(--black-3); border:1px solid var(--gray-light); padding:60px 48px; position:relative; }
+.story-box::after { content:''; position:absolute; bottom:-20px; right:-20px; width:100%; height:100%; border:1px solid rgba(255,107,0,0.15); z-index:-1; }
+.story-monogram { font-family:'Bebas Neue',sans-serif; font-size:9rem; color:transparent; -webkit-text-stroke:1px rgba(255,107,0,0.15); line-height:1; margin-bottom:12px; }
+.story-name { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; letter-spacing:2px; margin-bottom:6px; }
+.story-title { font-size:.75rem; letter-spacing:3px; text-transform:uppercase; color:var(--orange); }
+.story-founded { margin-top:28px; padding-top:28px; border-top:1px solid var(--gray-light); display:flex; align-items:center; gap:16px; }
+.story-founded-year { font-family:'Bebas Neue',sans-serif; font-size:3.5rem; color:var(--orange); line-height:1; }
+.story-founded-label { font-size:.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--gray); line-height:1.6; }
+.story-content h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(3rem,5vw,4.5rem); line-height:.95; margin-bottom:28px; }
+.story-content h2 span { color:var(--orange); }
+.story-body { font-size:1rem; color:var(--gray); line-height:1.9; font-weight:300; margin-bottom:20px; }
+
+.mission { background:var(--black-2); }
+.mission-inner { max-width:800px; margin:0 auto; text-align:center; }
+.mission-quote { font-family:'Bebas Neue',sans-serif; font-size:clamp(2.5rem,5vw,4.5rem); line-height:1.05; color:var(--white); margin-bottom:24px; }
+.mission-quote span { color:var(--orange); }
+.mission-sub { font-size:1rem; color:var(--gray); line-height:1.8; font-weight:300; }
+
+.values-section { background:var(--black); }
+.values-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:3px; margin-top:60px; }
+.value-card { background:var(--black-3); padding:52px 44px; position:relative; overflow:hidden; transition:all .4s; }
+.value-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--orange); transform:scaleY(0); transform-origin:top; transition:transform .4s; }
+.value-card:hover::before { transform:scaleY(1); }
+.value-card:hover { background:#1e1e1e; padding-left:52px; }
+.value-num { font-family:'Bebas Neue',sans-serif; font-size:4rem; color:rgba(255,107,0,.08); margin-bottom:16px; line-height:1; transition:color .4s; }
+.value-card:hover .value-num { color:rgba(255,107,0,.2); }
+.value-title { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; letter-spacing:1px; margin-bottom:14px; }
+.value-desc { font-size:.92rem; color:var(--gray); line-height:1.8; font-weight:300; }
+
+.milestones { background:var(--black-2); }
+.timeline { display:flex; flex-direction:column; gap:0; margin-top:60px; max-width:700px; }
+.timeline-item { display:grid; grid-template-columns:100px 1fr; gap:32px; position:relative; padding-bottom:48px; }
+.timeline-item:last-child { padding-bottom:0; }
+.timeline-item::before { content:''; position:absolute; left:49px; top:28px; bottom:0; width:1px; background:var(--gray-light); }
+.timeline-item:last-child::before { display:none; }
+.timeline-year { font-family:'Bebas Neue',sans-serif; font-size:1.3rem; color:var(--orange); padding-top:4px; text-align:right; }
+.timeline-dot { position:absolute; left:44px; top:6px; width:11px; height:11px; background:var(--orange); border-radius:50%; }
+.timeline-content h4 { font-weight:700; font-size:.95rem; margin-bottom:8px; letter-spacing:.5px; }
+.timeline-content p { font-size:.87rem; color:var(--gray); font-weight:300; line-height:1.6; }
+
+.testimonials-about { background:var(--black); }
+
+@media(max-width:768px){
+  .story-grid{grid-template-columns:1fr;}
+  .values-grid{grid-template-columns:1fr;}
+  .timeline-item{grid-template-columns:70px 1fr; gap:20px;}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">K<span>R</span>AVE <span style="font-size:1rem;letter-spacing:2px;color:var(--gray)">DIGITAL</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+<a href="contact.html" class="float-cta">Free Audit →</a>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-ghost">JW</div>
+  <div class="page-hero-content">
+    <div class="page-eyebrow"><div class="page-eyebrow-line"></div><span>About Krave Digital</span></div>
+    <h1 class="page-title">BUILT FOR<br>THE <span class="accent">BOLD</span></h1>
+    <p class="page-sub">The story behind Krave Digital and why we do what we do.</p>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="about-story">
+  <div class="story-grid">
+    <div class="story-visual reveal-left">
+      <div class="story-box">
+        <div class="story-monogram">JW</div>
+        <div class="story-name">Justin Williams</div>
+        <div class="story-title">Founder & CEO, Krave Digital</div>
+        <div class="story-founded">
+          <div class="story-founded-year">2022</div>
+          <div class="story-founded-label">Founded in 2022<br>Built from the ground up</div>
+        </div>
+      </div>
+    </div>
+    <div class="story-content reveal-right">
+      <div class="section-label"><div class="section-label-line"></div><span>Our Story</span></div>
+      <h2>WE WERE<br>BUILT ON A<br><span>BELIEF.</span></h2>
+      <p class="story-body">Every local business deserves to be found. Too many great businesses — businesses with real skill, real quality, and real value — are invisible online while their competitors, who are sometimes inferior, show up first simply because they understood the digital game.</p>
+      <p class="story-body">Justin Williams founded Krave Digital in 2022 with one mission: level the playing field for local businesses. No corporate fluff, no cookie-cutter strategies, no disappearing after the contract is signed. Just real work, real strategy, and real results for businesses that deserve to win.</p>
+      <p class="story-body">Today Krave Digital specializes exclusively in local SEO and web design — because doing one thing exceptionally well beats doing everything average. When you work with us, you work directly with Justin. No handoffs, no runaround.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission">
+  <div class="mission-inner reveal">
+    <div class="section-label" style="justify-content:center;"><div class="section-label-line"></div><span>Our Mission</span><div class="section-label-line"></div></div>
+    <h2 class="mission-quote">"MAKE EVERY LOCAL BUSINESS <span>IMPOSSIBLE</span> TO IGNORE ONLINE."</h2>
+    <p class="mission-sub">We exist to help local businesses dominate their market. Not just show up — dominate. Get found first, look better than the competition, convert more visitors, and grow month over month.</p>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section">
+  <div class="section-label reveal"><div class="section-label-line"></div><span>What We Stand For</span></div>
+  <h2 class="section-title reveal">OUR<br><span style="color:var(--orange)">VALUES</span></h2>
+  <div class="values-grid reveal">
+    <div class="value-card">
+      <div class="value-num">01</div>
+      <div class="value-title">Transparency First</div>
+      <p class="value-desc">You always know what we're doing, why we're doing it, and what the results are. No smoke and mirrors. No vague reports. You get the full picture every single month.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-num">02</div>
+      <div class="value-title">Results Over Reports</div>
+      <p class="value-desc">We measure success in rankings, leads, and revenue — not in the length of our monthly PDF. We care deeply about moving the needle, not about looking busy.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-num">03</div>
+      <div class="value-title">Local Obsessed</div>
+      <p class="value-desc">We don't do national campaigns, social media influencer work, or paid ads. We live and breathe local search — because that's where your customers are looking.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-num">04</div>
+      <div class="value-title">No Fluff. Ever.</div>
+      <p class="value-desc">Straight talk, real work, honest timelines. If something isn't working, we tell you. If we can't help you, we'll say so. We'd rather lose a client than overpromise.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="milestones">
+  <div class="section-label reveal"><div class="section-label-line"></div><span>Our Journey</span></div>
+  <h2 class="section-title reveal">HOW WE<br><span style="color:var(--orange)">GOT HERE</span></h2>
+  <div class="timeline reveal">
+    <div class="timeline-item">
+      <div class="timeline-year">2022</div>
+      <div style="position:relative;">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content" style="padding-left:28px;">
+          <h4>Krave Digital Founded</h4>
+          <p>Justin Williams launches Krave Digital with a clear focus: help local businesses get found online. The mission is simple — level the playing field.</p>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2023</div>
+      <div style="position:relative;">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content" style="padding-left:28px;">
+          <h4>Refining the Process</h4>
+          <p>Deep investment in local SEO strategy and building a repeatable system for getting local businesses to rank — fast. The Krave method takes shape.</p>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2024</div>
+      <div style="position:relative;">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content" style="padding-left:28px;">
+          <h4>Expanding Services</h4>
+          <p>Web design added to the offering, creating a full-stack local presence solution. SEO + design working together the way it was always meant to.</p>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2025</div>
+      <div style="position:relative;">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content" style="padding-left:28px;">
+          <h4>Krave Digital Goes All In</h4>
+          <p>Full agency launch. New website. Founder pricing program. The mission is the same — make local businesses impossible to ignore. Now we're scaling it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-about">
+  <div class="section-label reveal"><div class="section-label-line"></div><span>What People Say</span></div>
+  <h2 class="section-title reveal">STRAIGHT FROM<br><span style="color:var(--orange)">THE CLIENTS</span></h2>
+  <div class="testimonials-grid reveal">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Justin is the real deal. He doesn't overpromise and he delivers exactly what he says he will. In 90 days my business went from nowhere on Google to top 3. Period."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">R</div>
+        <div><div class="testimonial-name">Ray M.</div><div class="testimonial-biz">Auto Repair Shop</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Most agencies talk in circles. Justin talks in results. He told me exactly what he'd do, did it, and showed me the numbers. Simple as that."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">L</div>
+        <div><div class="testimonial-name">Lisa P.</div><div class="testimonial-biz">Hair Salon Owner</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"The new website alone tripled our online inquiries. When you add the SEO on top of it — we're fully booked two weeks out for the first time ever."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">T</div>
+        <div><div class="testimonial-name">Tony G.</div><div class="testimonial-biz">Plumbing Company</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band reveal">
+  <div class="cta-band-text">
+    <h2 class="cta-band-title">READY TO WORK<br>WITH <span>JUSTIN?</span></h2>
+    <p class="cta-band-sub">Get a free audit of your current online presence. Reach out directly and let's have an honest conversation about what it takes to own your city.</p>
+  </div>
+  <div class="cta-band-action">
+    <a href="contact.html" class="btn-primary">Get In Touch</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-logo">K<span>R</span>AVE DIGITAL</div>
+      <p class="footer-brand-desc">We help local businesses dominate their market online through strategic SEO and powerful web design. Founded 2022.</p>
+      <a href="mailto:Justin@Kravegrowth.com" class="footer-brand-email">Justin@Kravegrowth.com</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Agency</div>
+      <ul class="footer-col-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Expertise</div>
+      <ul class="footer-col-links">
+        <li><a href="services.html">Local SEO</a></li>
+        <li><a href="services.html">Web Design</a></li>
+        <li><a href="services.html">Reputation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <ul class="footer-col-links">
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="mailto:Justin@Kravegrowth.com">Justin@Kravegrowth.com</a></li>
+        <li><a href="https://kravegrowth.com">kravegrowth.com</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Krave Digital. All rights reserved.</div>
+    <div class="footer-tagline">Krave Digital — <span>Own Your City</span></div>
+    <div class="footer-est">Est. 2022 · kravegrowth.com</div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

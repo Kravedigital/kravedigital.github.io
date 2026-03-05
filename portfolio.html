@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Krave Digital</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.portfolio-intro { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:end; margin-bottom:70px; }
+.portfolio-intro-text { font-size:1rem; color:var(--gray); line-height:1.8; font-weight:300; }
+.portfolio-intro-text strong { color:var(--orange); font-weight:600; }
+
+.portfolio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; }
+.portfolio-item { position:relative; aspect-ratio:4/3; overflow:hidden; background:var(--black-3); display:flex; align-items:center; justify-content:center; }
+.portfolio-inner { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:36px; text-align:center; transition:all .4s; position:relative; }
+.portfolio-inner::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,var(--black-3) 0%,#160d00 100%); opacity:0; transition:opacity .4s; }
+.portfolio-item:hover .portfolio-inner::before { opacity:1; }
+.p-icon { font-size:2.8rem; opacity:.2; transition:all .4s; position:relative; z-index:1; }
+.portfolio-item:hover .p-icon { opacity:.7; transform:scale(1.15) translateY(-8px); }
+.p-tag { font-size:.65rem; letter-spacing:2px; text-transform:uppercase; color:var(--gray); position:relative; z-index:1; transition:color .4s; }
+.portfolio-item:hover .p-tag { color:var(--orange); }
+.p-overlay { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:24px; opacity:0; transition:opacity .4s; background:linear-gradient(to top,rgba(0,0,0,.8) 0%,transparent 60%); }
+.portfolio-item:hover .p-overlay { opacity:1; }
+.p-label { font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:2px; }
+.p-status { font-size:.65rem; letter-spacing:2px; text-transform:uppercase; color:var(--orange); margin-top:4px; }
+
+.portfolio-featured { background:var(--black-2); }
+.featured-banner { background:var(--black-3); border:1px solid rgba(255,107,0,0.2); padding:60px; display:flex; align-items:center; justify-content:space-between; gap:40px; margin-top:60px; position:relative; overflow:hidden; }
+.featured-banner::before { content:'FOUNDER OFFER'; position:absolute; top:20px; right:-30px; background:var(--orange); color:var(--black); font-size:.6rem; font-weight:700; letter-spacing:2px; padding:6px 50px; transform:rotate(45deg); transform-origin:center; }
+.featured-banner-text h3 { font-family:'Bebas Neue',sans-serif; font-size:2.5rem; margin-bottom:12px; }
+.featured-banner-text h3 span { color:var(--orange); }
+.featured-banner-text p { font-size:.95rem; color:var(--gray); line-height:1.7; font-weight:300; max-width:500px; }
+.featured-banner-perks { display:flex; flex-direction:column; gap:12px; flex-shrink:0; }
+.perk { display:flex; align-items:center; gap:10px; font-size:.85rem; color:var(--gray); }
+.perk::before { content:'✓'; color:var(--orange); font-weight:700; }
+
+.results-section { background:var(--black); }
+.results-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px; }
+.result-card { background:var(--black-3); padding:40px 32px; border-left:2px solid var(--orange); }
+.result-metric { font-family:'Bebas Neue',sans-serif; font-size:3.5rem; color:var(--orange); line-height:1; margin-bottom:8px; }
+.result-label { font-size:.8rem; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin-bottom:16px; }
+.result-desc { font-size:.88rem; color:var(--gray); font-weight:300; line-height:1.6; }
+
+@media(max-width:768px){
+  .portfolio-intro{grid-template-columns:1fr;}
+  .portfolio-grid{grid-template-columns:repeat(2,1fr);}
+  .featured-banner{flex-direction:column;}
+  .results-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">K<span>R</span>AVE <span style="font-size:1rem;letter-spacing:2px;color:var(--gray)">DIGITAL</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+<a href="contact.html" class="float-cta">Free Audit →</a>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-ghost">WRK</div>
+  <div class="page-hero-content">
+    <div class="page-eyebrow"><div class="page-eyebrow-line"></div><span>Our Work</span></div>
+    <h1 class="page-title">THE PROOF<br>IS <span class="accent">HERE</span></h1>
+    <p class="page-sub">Real businesses. Real results. Every case study starts with a business that was invisible online.</p>
+  </div>
+</div>
+
+<section style="background:var(--black);">
+  <div class="portfolio-intro reveal">
+    <div>
+      <div class="section-label"><div class="section-label-line"></div><span>Case Studies</span></div>
+      <h2 class="section-title">WORK THAT<br><span style="color:var(--orange)">SPEAKS</span></h2>
+    </div>
+    <p class="portfolio-intro-text">Krave Digital is actively building its portfolio. We're onboarding our first clients at <strong>founder rates</strong> — deeply discounted pricing in exchange for documented results and testimonials. First come, first served.</p>
+  </div>
+  <div class="portfolio-grid reveal">
+    <div class="portfolio-item">
+      <div class="portfolio-inner"><div class="p-icon">🏠</div><div class="p-tag">Roofing Company</div></div>
+      <div class="p-overlay"><div class="p-label">Roofing Co.</div><div class="p-status">Spot Available</div></div>
+    </div>
+    <div class="portfolio-item">
+      <div class="portfolio-inner"><div class="p-icon">❄️</div><div class="p-tag">HVAC Service</div></div>
+      <div class="p-overlay"><div class="p-label">HVAC Service</div><div class="p-status">Spot Available</div></div>
+    </div>
+    <div class="portfolio-item">
+      <div class="portfolio-inner"><div class="p-icon">🌿</div><div class="p-tag">Landscaping</div></div>
+      <div class="p-overlay"><div class="p-label">Landscaping</div><div class="p-status">Spot Available</div></div>
+    </div>
+    <div class="portfolio-item">
+      <div class="portfolio-inner"><div class="p-icon">🦷</div><div class="p-tag">Dental Office</div></div>
+      <div class="p-overlay"><div class="p-label">Dental Office</div><div class="p-status">Spot Available</div></div>
+    </div>
+    <div class="portfolio-item">
+      <div class="portfolio-inner"><div class="p-icon">🍕</div><div class="p-tag">Restaurant</div></div>
+      <div class="p-overlay"><div class="p-label">Restaurant</div><div class="p-status">Spot Available</div></div>
+    </div>
+    <div class="portfolio-item">
+      <div class="portfolio-inner"><div class="p-icon">⚡</div><div class="p-tag">Electrician</div></div>
+      <div class="p-overlay"><div class="p-label">Electrician</div><div class="p-status">Spot Available</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio-featured">
+  <div class="section-label reveal"><div class="section-label-line"></div><span>Limited Offer</span></div>
+  <h2 class="section-title reveal">BECOME OUR<br><span style="color:var(--orange)">FIRST</span> CLIENT</h2>
+  <div class="featured-banner reveal">
+    <div class="featured-banner-text">
+      <h3>Founder <span>Pricing</span> Is Live</h3>
+      <p>We're offering our first clients significantly reduced rates in exchange for documented results and an honest testimonial. You get premium agency service at a fraction of the cost. We get our first case study. Everybody wins.</p>
+    </div>
+    <div>
+      <div class="featured-banner-perks">
+        <div class="perk">Reduced monthly rates</div>
+        <div class="perk">Direct access to Justin</div>
+        <div class="perk">Full service — nothing held back</div>
+        <div class="perk">Limited to 3 founder spots</div>
+      </div>
+      <div style="margin-top:28px;">
+        <a href="contact.html" class="btn-primary">Claim A Founder Spot</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="results-section">
+  <div class="section-label reveal"><div class="section-label-line"></div><span>What To Expect</span></div>
+  <h2 class="section-title reveal">RESULTS WE<br><span style="color:var(--orange)">TARGET</span></h2>
+  <div class="results-grid reveal">
+    <div class="result-card">
+      <div class="result-metric">Top 3</div>
+      <div class="result-label">Google Maps Ranking</div>
+      <p class="result-desc">Getting into the top 3 map results is the single highest-impact move for any local business. That's always our first milestone.</p>
+    </div>
+    <div class="result-card">
+      <div class="result-metric">60 Days</div>
+      <div class="result-label">To See Movement</div>
+      <p class="result-desc">Most clients see measurable ranking improvements within 30–60 days of us getting to work. Not years — months.</p>
+    </div>
+    <div class="result-card">
+      <div class="result-metric">3x</div>
+      <div class="result-label">Average Lead Increase</div>
+      <p class="result-desc">When you go from invisible to top 3 in your city, the phone rings more. Consistently. That's the goal every time.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band reveal">
+  <div class="cta-band-text">
+    <h2 class="cta-band-title">YOUR BUSINESS<br>COULD BE <span>NEXT</span></h2>
+    <p class="cta-band-sub">Don't wait for your competitors to figure this out. Reach out today and let's map out what dominating your city looks like for your business.</p>
+  </div>
+  <div class="cta-band-action">
+    <a href="contact.html" class="btn-primary">Start Now</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-logo">K<span>R</span>AVE DIGITAL</div>
+      <p class="footer-brand-desc">We help local businesses dominate their market online through strategic SEO and powerful web design.</p>
+      <a href="mailto:Justin@Kravegrowth.com" class="footer-brand-email">Justin@Kravegrowth.com</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Agency</div>
+      <ul class="footer-col-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Expertise</div>
+      <ul class="footer-col-links">
+        <li><a href="services.html">Local SEO</a></li>
+        <li><a href="services.html">Web Design</a></li>
+        <li><a href="services.html">Reputation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <ul class="footer-col-links">
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="mailto:Justin@Kravegrowth.com">Justin@Kravegrowth.com</a></li>
+        <li><a href="https://kravegrowth.com">kravegrowth.com</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Krave Digital. All rights reserved.</div>
+    <div class="footer-tagline">Krave Digital — <span>Own Your City</span></div>
+    <div class="footer-est">Est. 2022 · kravegrowth.com</div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

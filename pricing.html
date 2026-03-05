@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Krave Digital</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:70px; }
+.pricing-card { background:var(--black-3); padding:52px 40px; position:relative; border:1px solid var(--gray-light); transition:all .4s; }
+.pricing-card:hover:not(.featured) { border-color:rgba(255,107,0,0.3); transform:translateY(-6px); }
+.pricing-card.featured { border-color:var(--orange); background:linear-gradient(145deg,#181000,#1a1200); transform:scale(1.03); }
+.pricing-card.featured::before { content:'MOST POPULAR'; position:absolute; top:-1px; left:50%; transform:translateX(-50%); background:var(--orange); color:var(--black); font-size:.6rem; font-weight:700; letter-spacing:2px; padding:5px 20px; white-space:nowrap; }
+.pricing-tier { font-size:.7rem; letter-spacing:3px; text-transform:uppercase; color:var(--orange); font-weight:600; margin-bottom:20px; }
+.pricing-price { font-family:'Bebas Neue',sans-serif; font-size:5rem; line-height:1; margin-bottom:4px; }
+.pricing-price sup { font-size:2rem; vertical-align:super; }
+.pricing-period { font-size:.8rem; color:var(--gray); margin-bottom:8px; letter-spacing:1px; }
+.pricing-desc { font-size:.85rem; color:var(--gray); font-weight:300; line-height:1.5; margin-bottom:32px; }
+.pricing-divider { height:1px; background:var(--gray-light); margin-bottom:32px; }
+.pricing-features { list-style:none; margin-bottom:40px; }
+.pricing-features li { font-size:.88rem; color:var(--gray); padding:9px 0; display:flex; align-items:center; gap:12px; font-weight:300; border-bottom:1px solid rgba(255,255,255,.04); }
+.pricing-features li:last-child { border-bottom:none; }
+.pricing-features li::before { content:'▸'; color:var(--orange); font-size:.65rem; flex-shrink:0; }
+.pricing-btn { width:100%; padding:16px; background:transparent; border:1px solid var(--orange); color:var(--orange); font-family:'Barlow',sans-serif; font-weight:700; font-size:.8rem; letter-spacing:2px; text-transform:uppercase; cursor:none; transition:all .3s; }
+.pricing-btn:hover,.pricing-card.featured .pricing-btn { background:var(--orange); color:var(--black); }
+
+.pricing-note { text-align:center; margin-top:40px; font-size:.85rem; color:var(--gray); font-weight:300; }
+.pricing-note span { color:var(--orange); }
+
+.compare { background:var(--black-2); }
+.compare-table { width:100%; border-collapse:collapse; margin-top:60px; }
+.compare-table th { padding:20px 24px; text-align:left; font-size:.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--gray); border-bottom:1px solid var(--gray-light); }
+.compare-table th:not(:first-child) { text-align:center; font-family:'Bebas Neue',sans-serif; font-size:1.1rem; letter-spacing:2px; color:var(--white); }
+.compare-table th.featured-col { color:var(--orange); }
+.compare-table td { padding:16px 24px; font-size:.88rem; color:var(--gray); border-bottom:1px solid rgba(255,255,255,.04); font-weight:300; }
+.compare-table td:not(:first-child) { text-align:center; }
+.compare-table tr:hover td { background:rgba(255,255,255,.02); }
+.check { color:var(--orange); font-size:1rem; }
+.cross { color:var(--gray-light); font-size:1rem; }
+
+.faq-section { background:var(--black); }
+
+@media(max-width:768px){
+  .pricing-grid{grid-template-columns:1fr;}
+  .pricing-card.featured{transform:scale(1);}
+  .compare-table{font-size:.75rem;}
+  .compare-table th,.compare-table td{padding:12px;}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">K<span>R</span>AVE <span style="font-size:1rem;letter-spacing:2px;color:var(--gray)">DIGITAL</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+<a href="contact.html" class="float-cta">Free Audit →</a>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-ghost">$$$</div>
+  <div class="page-hero-content">
+    <div class="page-eyebrow"><div class="page-eyebrow-line"></div><span>Investment</span></div>
+    <h1 class="page-title">STRAIGHT<br><span class="accent">FORWARD</span><br>PRICING</h1>
+    <p class="page-sub">No hidden fees. No confusing packages. Just clear investment levels with clear results.</p>
+  </div>
+</div>
+
+<section style="background:var(--black);">
+  <div class="section-label reveal"><div class="section-label-line"></div><span>Choose Your Plan</span></div>
+  <h2 class="section-title reveal">PICK YOUR<br><span style="color:var(--orange)">LEVEL</span></h2>
+  <div class="pricing-grid reveal">
+    <div class="pricing-card">
+      <div class="pricing-tier">Starter</div>
+      <div class="pricing-price"><sup>$</sup>497</div>
+      <div class="pricing-period">per month</div>
+      <p class="pricing-desc">Perfect for businesses just getting started with their online presence.</p>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Google Business Optimization</li>
+        <li>Local SEO Foundation Setup</li>
+        <li>Citation Building (20 directories)</li>
+        <li>Monthly Rank Report</li>
+        <li>Review Strategy Guide</li>
+        <li>Email Support</li>
+      </ul>
+      <button class="pricing-btn" onclick="window.location='contact.html'">Get Started</button>
+    </div>
+    <div class="pricing-card featured">
+      <div class="pricing-tier">Growth</div>
+      <div class="pricing-price"><sup>$</sup>997</div>
+      <div class="pricing-period">per month</div>
+      <p class="pricing-desc">The full package for businesses serious about owning their local market.</p>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Everything in Starter</li>
+        <li>Custom Website (5 pages)</li>
+        <li>Citation Building (50 directories)</li>
+        <li>Reputation Management</li>
+        <li>Competitor Analysis</li>
+        <li>Bi-weekly Strategy Calls</li>
+        <li>Priority Email & Phone Support</li>
+      </ul>
+      <button class="pricing-btn" onclick="window.location='contact.html'">Get Started</button>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-tier">Dominator</div>
+      <div class="pricing-price"><sup>$</sup>1,997</div>
+      <div class="pricing-period">per month</div>
+      <p class="pricing-desc">For businesses that refuse to be anything but #1 in their market.</p>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Everything in Growth</li>
+        <li>Premium Custom Website</li>
+        <li>Full Content Strategy</li>
+        <li>Weekly Reporting</li>
+        <li>Dedicated Account Manager</li>
+        <li>Monthly Strategy Sessions</li>
+        <li>24/7 Priority Support</li>
+      </ul>
+      <button class="pricing-btn" onclick="window.location='contact.html'">Get Started</button>
+    </div>
+  </div>
+  <p class="pricing-note reveal">Not sure which plan? <span>Get a free audit</span> and we'll tell you exactly what you need. <a href="contact.html" style="color:var(--orange);font-weight:600;">Start here →</a></p>
+</section>
+
+<!-- COMPARE TABLE -->
+<section class="compare">
+  <div class="section-label reveal"><div class="section-label-line"></div><span>Compare Plans</span></div>
+  <h2 class="section-title reveal">WHAT'S<br><span style="color:var(--orange)">INCLUDED</span></h2>
+  <table class="compare-table reveal">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Starter</th>
+        <th class="featured-col">Growth</th>
+        <th>Dominator</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Google Business Optimization</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Local SEO</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Monthly Rank Report</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Citation Building</td><td>20 directories</td><td>50 directories</td><td>50+ directories</td></tr>
+      <tr><td>Custom Website</td><td><span class="cross">—</span></td><td>5 pages</td><td>Premium (unlimited)</td></tr>
+      <tr><td>Reputation Management</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Competitor Analysis</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Content Strategy</td><td><span class="cross">—</span></td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+      <tr><td>Strategy Calls</td><td><span class="cross">—</span></td><td>Bi-weekly</td><td>Weekly</td></tr>
+      <tr><td>Reporting Frequency</td><td>Monthly</td><td>Monthly</td><td>Weekly</td></tr>
+      <tr><td>Support</td><td>Email</td><td>Email + Phone</td><td>24/7 Priority</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-label reveal"><div class="section-label-line"></div><span>Common Questions</span></div>
+  <h2 class="section-title reveal">GOT<br><span style="color:var(--orange)">QUESTIONS?</span></h2>
+  <div class="faq-list reveal">
+    <div class="faq-item">
+      <button class="faq-question">How long before I see results? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Local SEO is a long game but results come faster than most people expect. Most clients see measurable ranking improvements within 30–60 days, with significant results by month 3. We'll always be honest with you about timelines.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Do I need a website already? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>No. Our Growth and Dominator plans include a custom website build. If you have a website already, we'll audit it and either optimize what you have or recommend a rebuild if it's holding you back.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Is there a contract? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Starter plans are month-to-month. Growth and Dominator plans have a 3-month minimum commitment — this is because SEO takes time to work and we want to be accountable for real results, not just 30 days.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">What makes Krave Digital different from other agencies? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>You work directly with Justin Williams — not an account manager who reports to a manager who reports to someone else. We specialize exclusively in local businesses, which means our strategy is built around what actually works in local search, not generic digital marketing tactics.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">What industries do you work with? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Any local service business — roofers, plumbers, HVAC, dentists, restaurants, lawyers, salons, landscapers, gyms, auto repair, and more. If your customers are searching for you locally, we can get you found.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Can I upgrade my plan later? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Absolutely. Many clients start on Starter to test the waters and upgrade to Growth or Dominator once they see results. We make upgrades seamless with no gap in service.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Do you offer one-time website builds without SEO? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Yes — reach out via the contact page and we can discuss a standalone website project. Pricing depends on scope, complexity, and timeline. We always recommend pairing it with at least a Starter SEO plan so your new site actually gets found.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band reveal">
+  <div class="cta-band-text">
+    <h2 class="cta-band-title">STILL HAVE<br><span>QUESTIONS?</span></h2>
+    <p class="cta-band-sub">Schedule a free 20-minute call with Justin. No pitch, just answers and an honest assessment of what you need.</p>
+  </div>
+  <div class="cta-band-action">
+    <a href="contact.html" class="btn-primary">Book A Free Call</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-logo">K<span>R</span>AVE DIGITAL</div>
+      <p class="footer-brand-desc">We help local businesses dominate their market online through strategic SEO and powerful web design.</p>
+      <a href="mailto:Justin@Kravegrowth.com" class="footer-brand-email">Justin@Kravegrowth.com</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Agency</div>
+      <ul class="footer-col-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Expertise</div>
+      <ul class="footer-col-links">
+        <li><a href="services.html">Local SEO</a></li>
+        <li><a href="services.html">Web Design</a></li>
+        <li><a href="services.html">Reputation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <ul class="footer-col-links">
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="mailto:Justin@Kravegrowth.com">Justin@Kravegrowth.com</a></li>
+        <li><a href="https://kravegrowth.com">kravegrowth.com</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Krave Digital. All rights reserved.</div>
+    <div class="footer-tagline">Krave Digital — <span>Own Your City</span></div>
+    <div class="footer-est">Est. 2022 · kravegrowth.com</div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

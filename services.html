@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Krave Digital</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.services-full { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:70px; }
+.service-full-card { background:var(--black-3); padding:56px 48px; position:relative; overflow:hidden; transition:all .4s; }
+.service-full-card::after { content:''; position:absolute; top:0; right:0; bottom:0; width:2px; background:var(--orange); transform:scaleY(0); transform-origin:top; transition:transform .4s; }
+.service-full-card:hover::after { transform:scaleY(1); }
+.service-full-card:hover { background:#1e1e1e; }
+.sfc-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:28px; }
+.sfc-icon { font-size:2.5rem; }
+.sfc-num { font-family:'Bebas Neue',sans-serif; font-size:4rem; color:rgba(255,107,0,.08); line-height:1; transition:color .4s; }
+.service-full-card:hover .sfc-num { color:rgba(255,107,0,.2); }
+.sfc-name { font-family:'Bebas Neue',sans-serif; font-size:2rem; letter-spacing:1px; margin-bottom:16px; }
+.sfc-desc { font-size:.95rem; color:var(--gray); line-height:1.8; font-weight:300; margin-bottom:28px; }
+.sfc-features { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.sfc-features li { font-size:.85rem; color:var(--gray); display:flex; align-items:center; gap:10px; font-weight:300; }
+.sfc-features li::before { content:'▸'; color:var(--orange); font-size:.7rem; }
+
+.industries { background:var(--black-2); }
+.industries-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:60px; }
+.industry-item { background:var(--black-3); padding:32px 24px; text-align:center; border:1px solid var(--gray-light); transition:all .4s; }
+.industry-item:hover { border-color:var(--orange); transform:translateY(-4px); }
+.industry-icon { font-size:2rem; margin-bottom:12px; }
+.industry-name { font-family:'Bebas Neue',sans-serif; font-size:1.1rem; letter-spacing:1px; }
+
+@media(max-width:768px){
+  .services-full{grid-template-columns:1fr;}
+  .industries-grid{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">K<span>R</span>AVE <span style="font-size:1rem;letter-spacing:2px;color:var(--gray)">DIGITAL</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+<a href="contact.html" class="float-cta">Free Audit →</a>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-ghost">SVC</div>
+  <div class="page-hero-content">
+    <div class="page-eyebrow"><div class="page-eyebrow-line"></div><span>What We Offer</span></div>
+    <h1 class="page-title">SERVICES THAT<br><span class="accent">DOMINATE</span></h1>
+    <p class="page-sub">Every service is engineered to make local businesses impossible to ignore online.</p>
+  </div>
+</div>
+
+<section style="background:var(--black);">
+  <div class="section-label reveal"><div class="section-label-line"></div><span>Our Services</span></div>
+  <h2 class="section-title reveal">EVERYTHING YOU<br>NEED TO <span style="color:var(--orange)">WIN</span></h2>
+  <div class="services-full reveal">
+    <div class="service-full-card">
+      <div class="sfc-top"><div class="sfc-icon">📍</div><div class="sfc-num">01</div></div>
+      <div class="sfc-name">Local SEO</div>
+      <p class="sfc-desc">We optimize every signal Google uses to rank local businesses — from your website to your backlinks to your map listing. The result: you show up when it matters most.</p>
+      <ul class="sfc-features">
+        <li>Google Maps top 3 ranking strategy</li>
+        <li>Local keyword research & targeting</li>
+        <li>On-page SEO optimization</li>
+        <li>Local backlink acquisition</li>
+        <li>Competitor gap analysis</li>
+      </ul>
+    </div>
+    <div class="service-full-card">
+      <div class="sfc-top"><div class="sfc-icon">🌐</div><div class="sfc-num">02</div></div>
+      <div class="sfc-name">Web Design</div>
+      <p class="sfc-desc">Your website is your hardest working employee. We build custom sites that load fast, look premium, and convert visitors into paying customers — on every device.</p>
+      <ul class="sfc-features">
+        <li>Custom design — no templates</li>
+        <li>Mobile-first, fully responsive</li>
+        <li>Speed optimized (sub 2s load)</li>
+        <li>Conversion-focused layout</li>
+        <li>SEO-ready from day one</li>
+      </ul>
+    </div>
+    <div class="service-full-card">
+      <div class="sfc-top"><div class="sfc-icon">📈</div><div class="sfc-num">03</div></div>
+      <div class="sfc-name">Google Business Optimization</div>
+      <p class="sfc-desc">Your Google Business Profile is the most powerful free tool for local visibility. Most businesses set it up once and forget it. We make it work every single day.</p>
+      <ul class="sfc-features">
+        <li>Full profile setup & optimization</li>
+        <li>Category & attribute optimization</li>
+        <li>Photo strategy & uploading</li>
+        <li>Q&A management</li>
+        <li>Weekly post scheduling</li>
+      </ul>
+    </div>
+    <div class="service-full-card">
+      <div class="sfc-top"><div class="sfc-icon">⭐</div><div class="sfc-num">04</div></div>
+      <div class="sfc-name">Reputation Management</div>
+      <p class="sfc-desc">Reviews are currency. We build systems that generate a steady stream of 5-star reviews while monitoring and responding to everything said about your business online.</p>
+      <ul class="sfc-features">
+        <li>Review generation system</li>
+        <li>Multi-platform monitoring</li>
+        <li>Response management</li>
+        <li>Negative review strategy</li>
+        <li>Rating improvement roadmap</li>
+      </ul>
+    </div>
+    <div class="service-full-card">
+      <div class="sfc-top"><div class="sfc-icon">🎯</div><div class="sfc-num">05</div></div>
+      <div class="sfc-name">Citation Building</div>
+      <p class="sfc-desc">Consistent NAP (Name, Address, Phone) data across the web is a foundational ranking signal. We build and clean your citations across 50+ directories — fast.</p>
+      <ul class="sfc-features">
+        <li>50+ directory submissions</li>
+        <li>NAP consistency audit & fix</li>
+        <li>Niche-specific directories</li>
+        <li>Duplicate listing removal</li>
+        <li>Ongoing citation monitoring</li>
+      </ul>
+    </div>
+    <div class="service-full-card">
+      <div class="sfc-top"><div class="sfc-icon">📊</div><div class="sfc-num">06</div></div>
+      <div class="sfc-name">Monthly Reporting</div>
+      <p class="sfc-desc">No fluff, no jargon, no smoke and mirrors. Every month you get a clear picture of exactly where you rank, what's improving, and what the next 30 days look like.</p>
+      <ul class="sfc-features">
+        <li>Keyword ranking snapshots</li>
+        <li>Google Business insights</li>
+        <li>Traffic & lead tracking</li>
+        <li>Competitor position updates</li>
+        <li>Next month's action plan</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="industries">
+  <div class="section-label reveal"><div class="section-label-line"></div><span>Industries We Serve</span></div>
+  <h2 class="section-title reveal">WE WORK WITH<br><span style="color:var(--orange)">ANY</span> LOCAL BUSINESS</h2>
+  <div class="industries-grid reveal">
+    <div class="industry-item"><div class="industry-icon">🏠</div><div class="industry-name">Roofing</div></div>
+    <div class="industry-item"><div class="industry-icon">❄️</div><div class="industry-name">HVAC</div></div>
+    <div class="industry-item"><div class="industry-icon">🌿</div><div class="industry-name">Landscaping</div></div>
+    <div class="industry-item"><div class="industry-icon">🦷</div><div class="industry-name">Dental</div></div>
+    <div class="industry-item"><div class="industry-icon">🍕</div><div class="industry-name">Restaurants</div></div>
+    <div class="industry-item"><div class="industry-icon">⚡</div><div class="industry-name">Electricians</div></div>
+    <div class="industry-item"><div class="industry-icon">🔧</div><div class="industry-name">Plumbing</div></div>
+    <div class="industry-item"><div class="industry-icon">💇</div><div class="industry-name">Salons</div></div>
+    <div class="industry-item"><div class="industry-icon">🏋️</div><div class="industry-name">Fitness</div></div>
+    <div class="industry-item"><div class="industry-icon">🚗</div><div class="industry-name">Auto Repair</div></div>
+    <div class="industry-item"><div class="industry-icon">🐾</div><div class="industry-name">Veterinary</div></div>
+    <div class="industry-item"><div class="industry-icon">⚖️</div><div class="industry-name">Legal</div></div>
+  </div>
+</section>
+
+<div class="cta-band reveal">
+  <div class="cta-band-text">
+    <h2 class="cta-band-title">DON'T SEE YOUR<br><span>INDUSTRY?</span></h2>
+    <p class="cta-band-sub">If you're a local business, we can help. Reach out and let's talk about what dominating your market looks like for you specifically.</p>
+  </div>
+  <div class="cta-band-action">
+    <a href="contact.html" class="btn-primary">Let's Talk</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-logo">K<span>R</span>AVE DIGITAL</div>
+      <p class="footer-brand-desc">We help local businesses dominate their market online through strategic SEO and powerful web design.</p>
+      <a href="mailto:Justin@Kravegrowth.com" class="footer-brand-email">Justin@Kravegrowth.com</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Agency</div>
+      <ul class="footer-col-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Expertise</div>
+      <ul class="footer-col-links">
+        <li><a href="services.html">Local SEO</a></li>
+        <li><a href="services.html">Web Design</a></li>
+        <li><a href="services.html">Reputation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <ul class="footer-col-links">
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="mailto:Justin@Kravegrowth.com">Justin@Kravegrowth.com</a></li>
+        <li><a href="https://kravegrowth.com">kravegrowth.com</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Krave Digital. All rights reserved.</div>
+    <div class="footer-tagline">Krave Digital — <span>Own Your City</span></div>
+    <div class="footer-est">Est. 2022 · kravegrowth.com</div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

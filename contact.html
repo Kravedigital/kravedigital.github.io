@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Krave Digital</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.contact-section { background:var(--black); }
+.contact-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:100px; margin-top:70px; }
+
+.contact-left {}
+.contact-tagline { font-size:1rem; color:var(--gray); line-height:1.8; font-weight:300; margin-bottom:48px; max-width:380px; }
+.contact-items { display:flex; flex-direction:column; gap:28px; margin-bottom:56px; }
+.contact-item { display:flex; gap:20px; align-items:flex-start; padding:24px; background:var(--black-3); border-left:2px solid var(--orange); transition:all .3s; }
+.contact-item:hover { background:#1e1e1e; transform:translateX(6px); }
+.ci-icon { font-size:1.3rem; flex-shrink:0; margin-top:2px; }
+.ci-label { font-size:.65rem; letter-spacing:2px; text-transform:uppercase; color:var(--orange); font-weight:600; margin-bottom:4px; }
+.ci-value { font-size:.95rem; font-weight:600; }
+.ci-value a { color:var(--white); text-decoration:none; transition:color .3s; }
+.ci-value a:hover { color:var(--orange); }
+
+.response-box { background:var(--black-3); border:1px solid var(--gray-light); padding:28px; display:flex; align-items:center; gap:16px; }
+.response-icon { font-size:1.8rem; }
+.response-title { font-weight:700; font-size:.85rem; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px; }
+.response-desc { font-size:.82rem; color:var(--gray); font-weight:300; }
+
+.contact-form-wrap {}
+.form-header { margin-bottom:40px; }
+.form-header h3 { font-family:'Bebas Neue',sans-serif; font-size:2rem; letter-spacing:1px; margin-bottom:8px; }
+.form-header p { font-size:.88rem; color:var(--gray); font-weight:300; }
+
+.contact-form { display:flex; flex-direction:column; gap:20px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.form-group { display:flex; flex-direction:column; gap:8px; }
+.form-label { font-size:.65rem; letter-spacing:2px; text-transform:uppercase; color:var(--orange); font-weight:600; }
+.form-input,.form-select,.form-textarea { background:var(--black-3); border:1px solid var(--gray-light); color:var(--white); padding:14px 16px; font-family:'Barlow',sans-serif; font-size:.9rem; font-weight:300; transition:border-color .3s,background .3s; outline:none; cursor:none; width:100%; }
+.form-input:focus,.form-select:focus,.form-textarea:focus { border-color:var(--orange); background:#1a1a1a; }
+.form-input::placeholder,.form-textarea::placeholder { color:var(--gray-light); }
+.form-select { -webkit-appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23FF6B00' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; background-color:var(--black-3); padding-right:44px; cursor:none; }
+.form-select option { background:var(--black-3); color:var(--white); }
+.form-textarea { resize:none; height:130px; }
+.form-submit { background:var(--orange); color:var(--black); border:none; padding:18px 52px; font-family:'Barlow',sans-serif; font-weight:700; font-size:.85rem; letter-spacing:2px; text-transform:uppercase; cursor:none; transition:all .3s; align-self:flex-start; clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px)); }
+.form-submit:hover { background:var(--orange-bright); transform:translateY(-2px); box-shadow:0 16px 40px rgba(255,107,0,.3); }
+.form-note { font-size:.78rem; color:var(--gray); font-weight:300; }
+
+.success-msg { display:none; background:rgba(255,107,0,.1); border:1px solid var(--orange); padding:20px 24px; margin-top:20px; font-size:.9rem; color:var(--white); font-weight:300; }
+.success-msg.show { display:block; }
+
+.what-happens { background:var(--black-2); }
+.steps-row { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:60px; }
+.step-box { background:var(--black-3); padding:44px 36px; text-align:center; position:relative; overflow:hidden; transition:all .4s; }
+.step-box:hover { background:#1e1e1e; transform:translateY(-4px); }
+.step-num { font-family:'Bebas Neue',sans-serif; font-size:5rem; color:rgba(255,107,0,.08); position:absolute; top:-10px; right:16px; line-height:1; transition:color .4s; }
+.step-box:hover .step-num { color:rgba(255,107,0,.18); }
+.step-icon { font-size:2rem; margin-bottom:20px; position:relative; z-index:1; }
+.step-title { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; letter-spacing:1px; margin-bottom:12px; }
+.step-desc { font-size:.88rem; color:var(--gray); line-height:1.6; font-weight:300; }
+
+@media(max-width:768px){
+  .contact-grid{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .steps-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">K<span>R</span>AVE <span style="font-size:1rem;letter-spacing:2px;color:var(--gray)">DIGITAL</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-ghost">HI</div>
+  <div class="page-hero-content">
+    <div class="page-eyebrow"><div class="page-eyebrow-line"></div><span>Get In Touch</span></div>
+    <h1 class="page-title">LET'S<br><span class="accent">TALK</span></h1>
+    <p class="page-sub">Tell us about your business and we'll map out exactly what it takes to own your city.</p>
+  </div>
+</div>
+
+<section class="contact-section">
+  <div class="contact-grid">
+    <div class="contact-left reveal-left">
+      <p class="contact-tagline">Ready to dominate your local market? Reach out and you'll hear back from Justin directly within 24 hours — with a free look at your current online presence.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="ci-icon">✉️</div>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-value"><a href="mailto:Justin@Kravegrowth.com">Justin@Kravegrowth.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🌐</div>
+          <div>
+            <div class="ci-label">Website</div>
+            <div class="ci-value"><a href="https://kravegrowth.com" target="_blank">kravegrowth.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">👤</div>
+          <div>
+            <div class="ci-label">You're Working With</div>
+            <div class="ci-value">Justin Williams — Founder & CEO</div>
+          </div>
+        </div>
+      </div>
+      <div class="response-box">
+        <div class="response-icon">⚡</div>
+        <div>
+          <div class="response-title">Fast Response Guaranteed</div>
+          <div class="response-desc">Every message is read and responded to by Justin personally within 24 hours. Usually much faster.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap reveal-right">
+      <div class="form-header">
+        <h3>Send Us A Message</h3>
+        <p>Fill out the form and we'll get back to you with a free audit of your current online presence.</p>
+      </div>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-input" placeholder="John" id="firstName">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-input" placeholder="Smith" id="lastName">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Business Name</label>
+          <input type="text" class="form-input" placeholder="Smith's Roofing Co." id="bizName">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="john@yourcompany.com" id="email">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-input" placeholder="(555) 000-0000" id="phone">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Service You're Interested In</label>
+          <select class="form-select" id="service">
+            <option value="">Select a service...</option>
+            <option>Local SEO</option>
+            <option>Website Design</option>
+            <option>Google Business Setup</option>
+            <option>Reputation Management</option>
+            <option>Full Growth Package</option>
+            <option>Not Sure Yet — Need Advice</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your City / Market</label>
+          <input type="text" class="form-input" placeholder="e.g. Houston, TX" id="city">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tell Us About Your Business</label>
+          <textarea class="form-textarea" placeholder="What do you do, where are you located, and what's your biggest challenge right now?" id="message"></textarea>
+        </div>
+        <p class="form-note">By submitting this form you agree to be contacted by Krave Digital. We never share your information.</p>
+        <button class="form-submit" onclick="handleSubmit()">Send Message →</button>
+        <div class="success-msg" id="successMsg">
+          ✓ Message received! Justin will be in touch within 24 hours with your free audit.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT HAPPENS NEXT -->
+<section class="what-happens">
+  <div class="section-label reveal"><div class="section-label-line"></div><span>What Happens Next</span></div>
+  <h2 class="section-title reveal">AFTER YOU<br><span style="color:var(--orange)">REACH OUT</span></h2>
+  <div class="steps-row reveal">
+    <div class="step-box">
+      <div class="step-num">01</div>
+      <div class="step-icon">📬</div>
+      <div class="step-title">You Hear Back Fast</div>
+      <p class="step-desc">Justin personally responds to every inquiry within 24 hours — usually same day. No bots, no form letters.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">02</div>
+      <div class="step-icon">🔍</div>
+      <div class="step-title">Free Audit Delivered</div>
+      <p class="step-desc">We take a real look at your current online presence — rankings, website, Google Business, competitors — and share what we find. No charge, no obligation.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-num">03</div>
+      <div class="step-icon">🚀</div>
+      <div class="step-title">We Get To Work</div>
+      <p class="step-desc">If it's a fit, we build your custom strategy and start executing immediately. No long onboarding. No waiting. We move fast.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-logo">K<span>R</span>AVE DIGITAL</div>
+      <p class="footer-brand-desc">We help local businesses dominate their market online through strategic SEO and powerful web design. Founded 2022.</p>
+      <a href="mailto:Justin@Kravegrowth.com" class="footer-brand-email">Justin@Kravegrowth.com</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Agency</div>
+      <ul class="footer-col-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Expertise</div>
+      <ul class="footer-col-links">
+        <li><a href="services.html">Local SEO</a></li>
+        <li><a href="services.html">Web Design</a></li>
+        <li><a href="services.html">Reputation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <ul class="footer-col-links">
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="mailto:Justin@Kravegrowth.com">Justin@Kravegrowth.com</a></li>
+        <li><a href="https://kravegrowth.com">kravegrowth.com</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Krave Digital. All rights reserved.</div>
+    <div class="footer-tagline">Krave Digital — <span>Own Your City</span></div>
+    <div class="footer-est">Est. 2022 · kravegrowth.com</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+function handleSubmit(){
+  const fields = ['firstName','lastName','bizName','email','service','message'];
+  const filled = fields.every(id => document.getElementById(id).value.trim() !== '');
+  if(!filled){ alert('Please fill in all required fields.'); return; }
+  document.getElementById('successMsg').classList.add('show');
+  document.querySelector('.form-submit').textContent = 'Message Sent ✓';
+  document.querySelector('.form-submit').style.background = '#1a6600';
+}
+</script>
+</body>
+</html>
