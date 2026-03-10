@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Krave Growth | Jacksonville, FL</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/style.css">
 <style>
 .contact-section { background:var(--black); }
 .contact-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:100px; margin-top:70px; }
@@ -75,7 +75,7 @@
 <div class="cursor-dot" id="cursorDot"></div>
 <nav>
   <a href="index.html" class="nav-logo">K<span>R</span>AVE <span style="font-size:1rem;letter-spacing:2px;color:var(--gray)">DIGITAL</span></a>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span class="bar bar1"></span><span class="bar bar2"></span><span class="bar bar3"></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
@@ -106,7 +106,7 @@
           <div class="ci-icon"></div>
           <div>
             <div class="ci-label">Email</div>
-            <div class="ci-value"><a href="mailto:Justin@Kravegrowth.com">Justin@Kravegrowth.com</a></div>
+            <div class="ci-value"><a href="/cdn-cgi/l/email-protection#763c0305021f18363d0417001311041901021e5815191b"><span class="__cf_email__" data-cfemail="105a656364797e505b6271667577627f6764783e737f7d">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="contact-item">
@@ -222,7 +222,7 @@
     <div>
       <div class="footer-brand-logo">K<span>R</span>AVE DIGITAL</div>
       <p class="footer-brand-desc">We help local businesses dominate their market online through strategic SEO and powerful web design. Founded 2022.</p>
-      <a href="mailto:Justin@Kravegrowth.com" class="footer-brand-email">Justin@Kravegrowth.com</a>
+      <a href="/cdn-cgi/l/email-protection#83c9f6f0f7eaedc3c8f1e2f5e6e4f1ecf4f7ebade0ecee" class="footer-brand-email"><span class="__cf_email__" data-cfemail="08427d7b7c616648437a697e6d6f7a677f7c60266b6765">[email&#160;protected]</span></a>
     </div>
     <div>
       <div class="footer-col-title">Agency</div>
@@ -245,7 +245,7 @@
       <ul class="footer-col-links">
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="mailto:Justin@Kravegrowth.com">Justin@Kravegrowth.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#aae0dfd9dec3c4eae1d8cbdccfcdd8c5dddec284c9c5c7"><span class="__cf_email__" data-cfemail="bef4cbcdcad7d0fef5ccdfc8dbd9ccd1c9cad690ddd1d3">[email&#160;protected]</span></a></li>
         <li><a href="https://kravegrowth.com">kravegrowth.com</a></li>
         <li><a href="#">LinkedIn</a></li>
       </ul>
@@ -266,15 +266,5 @@
   <a href="contact.html" class="mobile-cta" onclick="closeMobile()">Get Started</a>
 </div>
 <script src="main.js"></script>
-<script>
-function handleSubmit(){
-  const fields = ['firstName','lastName','bizName','email','service','message'];
-  const filled = fields.every(id => document.getElementById(id).value.trim() !== '');
-  if(!filled){ alert('Please fill in all required fields.'); return; }
-  document.getElementById('successMsg').classList.add('show');
-  document.querySelector('.form-submit').textContent = 'Message Sent ✓';
-  document.querySelector('.form-submit').style.background = '#1a6600';
-}
-</script>
 </body>
 </html>

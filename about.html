@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About | Krave Growth | Jacksonville, FL</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/style.css">
 <style>
 .about-story { background:var(--black); }
 .story-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:100px; align-items:center; margin-top:70px; }
@@ -61,12 +61,12 @@
 
 .milestones { background:var(--black); }
 .timeline { display:flex; flex-direction:column; gap:0; margin-top:60px; max-width:700px; }
-.timeline-item { display:grid; grid-template-columns:100px 1fr; gap:32px; position:relative; padding-bottom:48px; }
+.timeline-item { display:grid; grid-template-columns:80px 1fr; gap:40px; position:relative; padding-bottom:48px; }
 .timeline-item:last-child { padding-bottom:0; }
-.timeline-item::before { content:''; position:absolute; left:49px; top:28px; bottom:0; width:1px; background:var(--gray-light); }
+.timeline-item::before { content:''; position:absolute; left:79px; top:8px; bottom:0; width:1px; background:rgba(255,255,255,.08); }
 .timeline-item:last-child::before { display:none; }
-.timeline-year { font-family:'Bebas Neue',sans-serif; font-size:1.3rem; color:var(--orange); padding-top:4px; text-align:right; }
-.timeline-dot { position:absolute; left:44px; top:6px; width:11px; height:11px; background:var(--orange); border-radius:50%; }
+.timeline-year { font-family:'Bebas Neue',sans-serif; font-size:1.3rem; color:var(--orange); padding-top:2px; text-align:right; }
+.timeline-content { padding-left:24px; }
 .timeline-content h4 { font-weight:700; font-size:.95rem; margin-bottom:8px; letter-spacing:.5px; }
 .timeline-content p { font-size:.87rem; color:var(--gray); font-weight:300; line-height:1.6; }
 
@@ -95,7 +95,7 @@
 <div class="cursor-dot" id="cursorDot"></div>
 <nav>
   <a href="index.html" class="nav-logo">K<span>R</span>AVE <span style="font-size:1rem;letter-spacing:2px;color:var(--gray)">DIGITAL</span></a>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span class="bar bar1"></span><span class="bar bar2"></span><span class="bar bar3"></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
@@ -213,42 +213,30 @@
   <div class="timeline reveal">
     <div class="timeline-item">
       <div class="timeline-year">2022</div>
-      <div style="position:relative;">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content" style="padding-left:28px;">
-          <h4>Krave Growth Founded in Jacksonville</h4>
-          <p>Justin Williams launches Krave Growth with a clear focus: help Jacksonville local businesses get found online and compete with the big players.</p>
-        </div>
+      <div class="timeline-content">
+        <h4>Krave Growth Founded in Jacksonville</h4>
+        <p>Justin Williams launches Krave Growth with a clear focus: help Jacksonville local businesses get found online and compete with the big players.</p>
       </div>
     </div>
     <div class="timeline-item">
       <div class="timeline-year">2023</div>
-      <div style="position:relative;">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content" style="padding-left:28px;">
-          <h4>Building the Process</h4>
-          <p>Deep investment in local SEO strategy and building a repeatable system for getting Jacksonville businesses to rank fast. The Krave method takes shape.</p>
-        </div>
+      <div class="timeline-content">
+        <h4>Building the Process</h4>
+        <p>Deep investment in local SEO strategy and building a repeatable system for getting Jacksonville businesses to rank fast. The Krave method takes shape.</p>
       </div>
     </div>
     <div class="timeline-item">
       <div class="timeline-year">2024</div>
-      <div style="position:relative;">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content" style="padding-left:28px;">
-          <h4>Web Design Added</h4>
-          <p>Custom web design added to the offering, creating a complete local presence solution. SEO and design working together the way it was always meant to.</p>
-        </div>
+      <div class="timeline-content">
+        <h4>Web Design Added</h4>
+        <p>Custom web design added to the offering, creating a complete local presence solution. SEO and design working together the way it was always meant to.</p>
       </div>
     </div>
     <div class="timeline-item">
       <div class="timeline-year">2025</div>
-      <div style="position:relative;">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content" style="padding-left:28px;">
-          <h4>Full Agency Launch</h4>
-          <p>New website. Full service packages. Founder pricing program. The mission is the same. Make Jacksonville businesses impossible to ignore. Now scaling it.</p>
-        </div>
+      <div class="timeline-content">
+        <h4>Full Agency Launch</h4>
+        <p>New website. Full service packages. Founder pricing program. The mission is the same. Make Jacksonville businesses impossible to ignore. Now scaling it.</p>
       </div>
     </div>
   </div>
@@ -292,7 +280,7 @@
     <div>
       <div class="footer-brand-logo">K<span>R</span>AVE DIGITAL</div>
       <p class="footer-brand-desc">Jacksonville's local SEO and web design agency. Founded in 2022 by Justin Williams. Built to help local businesses win online.</p>
-      <a href="mailto:Justin@Kravegrowth.com" class="footer-brand-email">Justin@Kravegrowth.com</a>
+      <a href="/cdn-cgi/l/email-protection#ca80bfb9bea3a48a81b8abbcafadb8a5bdbea2e4a9a5a7" class="footer-brand-email"><span class="__cf_email__" data-cfemail="69231c1a1d000729221b081f0c0e1b061e1d01470a0604">[email&#160;protected]</span></a>
     </div>
     <div>
       <div class="footer-col-title">Agency</div>
@@ -314,7 +302,7 @@
       <ul class="footer-col-links">
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="mailto:Justin@Kravegrowth.com">Justin@Kravegrowth.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#ade7d8ded9c4c3ede6dfccdbc8cadfc2dad9c583cec2c0"><span class="__cf_email__" data-cfemail="9ed4ebedeaf7f0ded5ecffe8fbf9ecf1e9eaf6b0fdf1f3">[email&#160;protected]</span></a></li>
         <li><a href="https://kravegrowth.com">kravegrowth.com</a></li>
         <li><a href="#">LinkedIn</a></li>
       </ul>
