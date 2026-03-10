@@ -25,7 +25,7 @@
 .pkg-features { list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:36px; }
 .pkg-features li { font-size:.88rem; color:#ccc; display:flex; align-items:flex-start; gap:10px; line-height:1.4; font-weight:300; }
 .pkg-features li::before { content:'▸'; color:var(--orange); font-size:.7rem; flex-shrink:0; margin-top:2px; }
-.pkg-btn { width:100%; padding:15px; background:transparent; border:1px solid var(--orange); color:var(--orange); font-family:'Barlow',sans-serif; font-weight:700; font-size:.78rem; letter-spacing:2px; text-transform:uppercase; cursor:none; transition:all .3s; }
+.pkg-btn { width:100%; padding:15px; background:transparent; border:1px solid var(--orange); color:var(--orange); font-family:'Barlow',sans-serif; font-weight:700; font-size:.78rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:all .3s; }
 .pkg-btn:hover, .pkg-card.featured .pkg-btn { background:var(--orange); color:var(--black); }
 
 /* COMPARISON BAR */
@@ -59,7 +59,7 @@
 .bundle-includes { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:32px; }
 .bundle-includes li { font-size:.85rem; color:#ccc; display:flex; align-items:flex-start; gap:10px; font-weight:300; line-height:1.4; }
 .bundle-includes li::before { content:'▸'; color:var(--orange); font-size:.65rem; flex-shrink:0; margin-top:2px; }
-.bundle-btn { width:100%; padding:14px; background:transparent; border:1px solid var(--orange); color:var(--orange); font-family:'Barlow',sans-serif; font-weight:700; font-size:.75rem; letter-spacing:2px; text-transform:uppercase; cursor:none; transition:all .3s; }
+.bundle-btn { width:100%; padding:14px; background:transparent; border:1px solid var(--orange); color:var(--orange); font-family:'Barlow',sans-serif; font-weight:700; font-size:.75rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:all .3s; }
 .bundle-btn:hover, .bundle-card.featured .bundle-btn { background:var(--orange); color:var(--black); }
 
 /* RETAINERS */
@@ -81,7 +81,7 @@
 .ret-explain { background:rgba(255,107,0,0.05); border:1px solid rgba(255,107,0,0.15); padding:16px 20px; margin-bottom:28px; }
 .ret-explain-title { font-size:.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--orange); font-weight:600; margin-bottom:8px; }
 .ret-explain-text { font-size:.82rem; color:var(--gray); font-weight:300; line-height:1.6; }
-.ret-btn { width:100%; padding:14px; background:transparent; border:1px solid var(--orange); color:var(--orange); font-family:'Barlow',sans-serif; font-weight:700; font-size:.75rem; letter-spacing:2px; text-transform:uppercase; cursor:none; transition:all .3s; }
+.ret-btn { width:100%; padding:14px; background:transparent; border:1px solid var(--orange); color:var(--orange); font-family:'Barlow',sans-serif; font-weight:700; font-size:.75rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:all .3s; }
 .ret-btn:hover, .retainer-card.highlight .ret-btn { background:var(--orange); color:var(--black); }
 
 /* ADDONS */
@@ -120,7 +120,20 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-dot" id="cursorDot"></div>
 <nav>
-  <a href="index.html" class="nav-logo">K<span>R</span>AVE <span style="font-size:1rem;letter-spacing:2px;color:var(--gray)">GROWTH</span></a>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" fill="#FF6B00"/>
+        <rect x="9" y="7" width="4.5" height="22" fill="#080808"/>
+        <polygon points="13.5,18 22,7 27,7 18.5,18" fill="#080808"/>
+        <polygon points="13.5,18 22,29 27,29 18.5,18" fill="#080808"/>
+      </svg>
+    </div>
+    <div class="nav-logo-words">
+      <div class="nav-logo-top">K<span>R</span>AVE</div>
+      <div class="nav-logo-bot">GROWTH</div>
+    </div>
+  </a>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span class="bar bar1"></span><span class="bar bar2"></span><span class="bar bar3"></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>

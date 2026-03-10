@@ -34,13 +34,13 @@
 .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 .form-group { display:flex; flex-direction:column; gap:8px; }
 .form-label { font-size:.65rem; letter-spacing:2px; text-transform:uppercase; color:var(--orange); font-weight:600; }
-.form-input,.form-select,.form-textarea { background:var(--black-3); border:1px solid var(--gray-light); color:var(--white); padding:14px 16px; font-family:'Barlow',sans-serif; font-size:.9rem; font-weight:300; transition:border-color .3s,background .3s; outline:none; cursor:none; width:100%; }
+.form-input,.form-select,.form-textarea { background:var(--black-3); border:1px solid var(--gray-light); color:var(--white); padding:14px 16px; font-family:'Barlow',sans-serif; font-size:.9rem; font-weight:300; transition:border-color .3s,background .3s; outline:none; cursor:pointer; width:100%; }
 .form-input:focus,.form-select:focus,.form-textarea:focus { border-color:var(--orange); background:#1a1a1a; }
 .form-input::placeholder,.form-textarea::placeholder { color:var(--gray-light); }
-.form-select { -webkit-appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23FF6B00' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; background-color:var(--black-3); padding-right:44px; cursor:none; }
+.form-select { -webkit-appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23FF6B00' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; background-color:var(--black-3); padding-right:44px; cursor:pointer; }
 .form-select option { background:var(--black-3); color:var(--white); }
 .form-textarea { resize:none; height:130px; }
-.form-submit { background:var(--orange); color:var(--black); border:none; padding:18px 52px; font-family:'Barlow',sans-serif; font-weight:700; font-size:.85rem; letter-spacing:2px; text-transform:uppercase; cursor:none; transition:all .3s; align-self:flex-start; clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px)); }
+.form-submit { background:var(--orange); color:var(--black); border:none; padding:18px 52px; font-family:'Barlow',sans-serif; font-weight:700; font-size:.85rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:all .3s; align-self:flex-start; clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px)); }
 .form-submit:hover { background:var(--orange-bright); transform:translateY(-2px); box-shadow:0 16px 40px rgba(255,107,0,.3); }
 .form-note { font-size:.78rem; color:var(--gray); font-weight:300; }
 
@@ -74,7 +74,20 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-dot" id="cursorDot"></div>
 <nav>
-  <a href="index.html" class="nav-logo">K<span>R</span>AVE <span style="font-size:1rem;letter-spacing:2px;color:var(--gray)">GROWTH</span></a>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" fill="#FF6B00"/>
+        <rect x="9" y="7" width="4.5" height="22" fill="#080808"/>
+        <polygon points="13.5,18 22,7 27,7 18.5,18" fill="#080808"/>
+        <polygon points="13.5,18 22,29 27,29 18.5,18" fill="#080808"/>
+      </svg>
+    </div>
+    <div class="nav-logo-words">
+      <div class="nav-logo-top">K<span>R</span>AVE</div>
+      <div class="nav-logo-bot">GROWTH</div>
+    </div>
+  </a>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span class="bar bar1"></span><span class="bar bar2"></span><span class="bar bar3"></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -106,7 +119,7 @@
           <div class="ci-icon"></div>
           <div>
             <div class="ci-label">Email</div>
-            <div class="ci-value"><a href="/cdn-cgi/l/email-protection#763c0305021f18363d0417001311041901021e5815191b"><span class="__cf_email__" data-cfemail="105a656364797e505b6271667577627f6764783e737f7d">[email&#160;protected]</span></a></div>
+            <div class="ci-value">Justin&#64;kravegrowth.com</div>
           </div>
         </div>
         <div class="contact-item">
